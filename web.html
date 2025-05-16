@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web phim nhóm 5</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* CSS cho carousel */
+        .movie-carousel {
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 15px;
+            padding: 0 10px;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .carousel-container:hover .carousel-control {
+            opacity: 1;
+        }
+
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-control.prev {
+            left: 10px;
+        }
+
+        .carousel-control.next {
+            right: 10px;
+        }
+
+        .carousel-slide .movie {
+            min-width: calc(20% - 15px);
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide .movie {
+                min-width: calc(33.33% - 15px);
+            }
+            
+            .carousel-control {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-slide .movie {
+                min-width: calc(50% - 15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">NHÓM 5 FILM<br>
+        <span class="phim_online">Phim Online</span>
+        </div>
+        <div class="search-container">
+            <label for="search"><i class="fas fa-search"></i></label>
+            <input type="text" id="search" placeholder="Nhập tên phim bạn muốn tìm kiếm...">
+        </div>
+        <div class="sign-in">
+            <a href="#" style="color: white; margin-right: 10px; text-decoration: none;"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+            <a href="#" style="color: white; margin-right: 10px; text-decoration: none;"><i class="fas fa-user-plus"></i> Đăng ký</a>
+        </div>
+    </header>
+    <nav>
+        <a href="#">TRANG CHỦ</a>
+        <a href="#">THỂ LOẠI</a>
+        <a href="#">QUỐC GIA</a>
+        <a href="#">PHIM BỘ</a>
+        <a href="#">PHIM LẺ</a>
+        <a href="#">PHIM CHIẾU RẠP</a>
+    </nav>
+    
+    <div class="section-title">PHIM ĐỀ CỬ</div>
+    <div class="movies-row">
+        <div class="movie">
+            <div class="label">Tập 7 Vietsub</div>
+            <img src="https://image.tmdb.org/t/p/original//abeH7n5pcuQcwYcTxG6DTZvXLP1.jpg" alt="Phim 1">
+            <div class="movie-info">
+                <div class="movie-title">Lãnh Địa Tử Chiến</div>
+                <div class="movie-sub">MobLand</div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="label">Tập 16 Vietsub</div>
+            <img src="https://afamilycdn.com/150157425591193600/2025/3/20/481957179-1197463188396504-4067631499749917077-n-6345-4220-1742436202938-17424362030151853837288.jpg" alt="Phim 2">
+            <div class="movie-info">
+                <div class="movie-title">Khi cuộc đời cho bạn quả quýt</div>
+                <div class="movie-sub">When Life Gives You Tangerines</div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="label">Tập 8 Vietsub + thuyết minh</div>
+            <img src="https://bazaarvietnam.vn/wp-content/uploads/2025/03/harper-bazaar-review-phim-luoi-dao-hiem-hoc-hyper-knife-2.jpeg" alt="Phim 3">
+            <div class="movie-info">
+                <div class="movie-title">Lưỡi dao hiểm hóc</div>
+                <div class="movie-sub">The knife</div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="label">Full Vietsub</div>
+            <img src="https://static.nutscdn.com/vimg/300-0/59fd1a70f7398b8e29957bcaee8fd52b.jpg" alt="Phim 4">
+            <div class="movie-info">
+                <div class="movie-title">Avatar 2: Dòng Chảy Của Nước</div>
+                <div class="movie-sub">Avatar: The Way of Water</div>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="label">Full Vietsub</div>
+            <img src="https://static.nutscdn.com/vimg/300-0/b3cb9389ec41c9190a798e1f09fd4c69.jpg" alt="Phim 5">
+            <div class="movie-info">
+                <div class="movie-title">Trừ Tà Ký: Khởi Nguyên Hắc Ám</div>
+                <div class="movie-sub">Exorcism Chronicles: The Beginning</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Carousel Section -->
+    <div class="section-title">PHIM MỚI CẬP NHẬT</div>
+    <div class="movie-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <div class="movie">
+                    <div class="label">Full Vietsub</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
